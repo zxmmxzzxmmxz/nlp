@@ -15,13 +15,19 @@
 # Verb Adjective structure: this refers to Verb phrase -> adjective phrase structure
 20  VA   VP AP
 
-# Question Phrase -> Do PNoun VerbB Punc // Does Noun VerbB Punc
+# Question Phrase section 
+# -> Do PNoun VerbB Punc // Does Noun VerbB Punc
+
+# TODO:
+# -> What/Which/Why  Does/Do  Proper  VerbB
+
 20  QP   SingleNoun  VerbB
 20  QP   PluralNoun  VerbB
 
 1   SingleNoun   Does Noun
 1   PluralNoun   Do  PNoun
 
+# End of Question Phrase section
 
 1   VP   VerbT NP
 1   VP   VerbT EP
@@ -29,6 +35,7 @@
 20  NP   Det Nbar
 1   NP   Proper
 
+# Explanation Phrase: Determiner followed by Proper Noun,  probably need to rename
 20  EP   Det Proper
 
 # Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
