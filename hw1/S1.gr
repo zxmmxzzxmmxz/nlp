@@ -8,12 +8,22 @@
 
 1   S1   NP VP
 1   S1   NP _VP
+1   S1   VA Punc
 1   _VP  VP Punc
 
+# This refers to Verb phrase -> adjective phrase structure
+20  VA   VP AP
+
 1   VP   VerbT NP
+1   VP   VerbT EP
 
 20  NP   Det Nbar
 1   NP   Proper
+
+20  EP   Det Proper
+
+# Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
+20  AP   VerbT Adje
 
 10  Nbar Noun
 1   Nbar Nbar PP

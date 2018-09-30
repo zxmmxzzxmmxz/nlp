@@ -89,6 +89,7 @@
 1    VerbT    drinks
 1    VerbT    carries
 1    VerbT    rides
+1    VerbT    riding
 
 # End-of-sentence.
 1    Misc    !
@@ -143,25 +144,25 @@
 
 
 # Adjectives.
-1    Misc    bloody
-1    Misc    weary
-1    Misc    unable
-1    Misc    trusty
-1    Misc    further
-1    Misc    sacred
-1    Misc    tropical
-1    Misc    indigenous
-1    Misc    temperate
-1    Misc    hot
-1    Misc    lucky
-1    Misc    simple
-1    Misc    tiny
-1    Misc    hard    
-1    Misc    sensational
-1    Misc    comparable
-1    Misc    angolian
-1    Misc    yellow
-1    Misc    plodding
+1    Adje    bloody
+1    Adje    weary
+1    Adje    unable
+1    Adje    trusty
+1    Adje    further
+1    Adje    sacred
+1    Adje    tropical
+1    Adje    indigenous
+1    Adje    temperate
+1    Adje    hot
+1    Adje    lucky
+1    Adje    simple
+1    Adje    tiny
+1    Adje    hard    
+1    Adje    sensational
+1    Adje    comparable
+1    Adje    angolian
+1    Adje    yellow
+1    Adje    plodding
 
 # Comparative adjectives.
 1    Misc    bloodier
@@ -195,7 +196,7 @@
 
 # More proper nouns, not people.
 
-1    Misc    Camelot
+1    Proper  Camelot
 1    Misc    England
 1    Misc    _Holy _Grail
 1    _Holy   Holy
@@ -241,7 +242,7 @@
 1    Misc    does
 
 # 'to'
-1    Misc    to
+1    Det    to
 
 # 'not'
 1    Misc    not
@@ -278,7 +279,6 @@
 1    Misc    speaking
 1    Misc    covering
 1    Misc    being
-1    Misc    riding
 1    Misc    drinking
 1    Misc    growing
 1    Misc    carrying
