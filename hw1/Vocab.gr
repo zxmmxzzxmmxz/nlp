@@ -11,6 +11,7 @@
 
 # Punctuations
 1   Punc    .
+1   Punc    ?
 
 # Singular and mass nouns.  Notice that only the
 # ones that start with consonants get our Noun tag.
@@ -94,7 +95,6 @@
 # End-of-sentence.
 1    Misc    !
 1    Misc    .
-1    Misc    ?
 
 # Pauses.
 1    Misc    ,
@@ -183,16 +183,16 @@
 1    Misc    hardest
 
 # Plural nouns.
-1    Misc    coconuts
-1    Misc    halves
-1    Misc    snows
-1    Misc    mountains
-1    Misc    areas
-1    Misc    strangers
-1    Misc    inches
-1    Misc    snakes
-1    Misc    ants
-1    Misc    nights
+1    PNoun    coconuts
+1    PNoun    halves
+1    PNoun    snows
+1    PNoun    mountains
+1    PNoun    areas
+1    PNoun    strangers
+1    PNoun    inches
+1    PNoun    snakes
+1    PNoun    ants
+1    PNoun    nights
 
 # More proper nouns, not people.
 
@@ -238,8 +238,8 @@
 1    Misc    unfortunately
 
 # 'do'/'does'
-1    Misc    do
-1    Misc    does
+1    Do      do
+1    Does    does
 
 # 'to'
 1    Det    to
@@ -248,17 +248,17 @@
 1    Misc    not
 
 # Verbs (base form).
-1    Misc    have
-1    Misc    speak
-1    Misc    cover
-1    Misc    be
-1    Misc    ride
-1    Misc    drink
-1    Misc    grow
-1    Misc    carry
-1    Misc    suggest
-1    Misc    migrate
-1    Misc    know
+1    VerbB    have
+1    VerbB    speak
+1    VerbB    cover
+1    VerbB    be
+1    VerbB    ride
+1    VerbB    drink
+1    VerbB    grow
+1    VerbB    carry
+1    VerbB    suggest
+1    VerbB    migrate
+1    VerbB    know
 
 # Verbs (past tense).
 1    Misc    had
