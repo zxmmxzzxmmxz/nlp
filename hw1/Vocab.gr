@@ -12,6 +12,11 @@
 # Punctuations
 1   Punc    .
 1   Punc    ?
+1   Punc    !
+
+# Is / Are for Questions
+1   Is      is
+1   Are     are
 
 # Singular and mass nouns.  Notice that only the
 # ones that start with consonants get our Noun tag.
@@ -275,16 +280,17 @@
 1    Misc    knew
 
 # Verbs (present participles).
-1    Misc    having
-1    Misc    speaking
-1    Misc    covering
-1    Misc    being
-1    Misc    drinking
-1    Misc    growing
-1    Misc    carrying
-1    Misc    suggesting
-1    Misc    migrating
-1    Misc    knowing
+# For now, they are assigned to VerbB too
+1    VerbB    having
+1    VerbB    speaking
+1    VerbB    covering
+1    VerbB    being
+1    VerbB    drinking
+1    VerbB    growing
+1    VerbB    carrying
+1    VerbB    suggesting
+1    VerbB    migrating
+1    VerbB    knowing
 
 # Verbs (past participle).
 1    Misc    had
