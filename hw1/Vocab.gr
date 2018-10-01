@@ -210,15 +210,15 @@
 1    Misc    Saxons
 
 # Personal pronouns.
-1    Misc    I
-1    Misc    he
-1    Misc    her
-1    Misc    him
-1    Misc    it
-1    Misc    one
-1    Misc    she
-1    Misc    them
-1    Misc    they
+1    Pron    I
+1    Pron    he
+1    Pron    her
+1    Pron    him
+1    Pron    it
+1    Pron    one
+1    Pron    she
+1    Pron    them
+1    Pron    they
 
 
 # Possessive personal pronouns
@@ -322,15 +322,15 @@
 
 # Wh-determiners.
 1    Misc    that
-1    Misc    what
-1    Misc    which
+1    WhPr    what
+1    WhPr    which
 
 # Wh-pronouns.
-1    Misc    what
-1    Misc    who
+1    WhPr    what
+1    WhPr    who
 
 # Wh possessive pronoun.
-1    Misc    whose
+1    WhPr    whose
 
 # Wh-adverbs
 1    Misc    how
