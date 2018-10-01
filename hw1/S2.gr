@@ -1,15 +1,15 @@
 1  TOP	 S2
 
-1	 S2		  _Adje
+1	 S2	      _Adje
 1    S2       _Det
 1    S2       _Do
-1	 S2		  _Does
+1    S2       _Does
 1    S2       _Misc
 1    S2       _Noun
-1	 S2		  _PNoun
+1    S2       _PNoun
 1    S2       _Prep
 1    S2       _Proper
-1	 S2		  _Punc
+1    S2       _Punc
 1    S2       _VerbB
 1    S2       _VerbT
 
