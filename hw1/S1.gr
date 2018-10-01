@@ -39,9 +39,11 @@
 
 # Proper VerbB     <--- action phrase: "Arthur speak"
 20  Action  Proper  VerbB
+20  Action  Proper  VDescPhr
 
 # Pronoun VerbB    <--- "she speak" Ambiguous Action: AAction
 20  AAction  Pron  VerbB
+20  AAction  Pron  VDescPhr
 
 # VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
 20  VPhrase  VerbB   AAction
@@ -62,6 +64,12 @@
 
 # Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
 20  AP   VerbT Adje
+
+# Simple Descriptive Phrase:  Det Noun <--  that king, a king, etc
+20  DescPhr   Det   Noun
+
+# Simple Verb on Descriptive Phrase:    VerbB  DescPhr
+20  VDescPhr  VerbB DescPhr
 
 10  Nbar Noun
 1   Nbar Nbar PP

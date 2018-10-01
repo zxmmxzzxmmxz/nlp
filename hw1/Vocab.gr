@@ -197,7 +197,7 @@
 # More proper nouns, not people.
 
 1    Proper  Camelot
-1    Misc    England
+1    Proper  England
 1    Misc    _Holy _Grail
 1    _Holy   Holy
 1    _Grail  Grail
@@ -333,10 +333,10 @@
 1    WhPr    whose
 
 # Wh-adverbs
-1    Misc    how
-1    Misc    when
-1    Misc    where
-1    Misc    why
+1    WhPr    how
+1    WhPr    when
+1    WhPr    where
+1    WhPr    why
 
 
 # Possessive marker.
