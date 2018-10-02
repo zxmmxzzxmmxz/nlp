@@ -79,23 +79,25 @@
 1    Proper    Dingo
 1    Proper    Patsy
 1    Proper    _Uther _Pendragon
-1    _Sir      Sir
-1    _Lancelot Lancelot
-1    _Bedevere Bedevere
-1    _Uther    Uther
-1    _Pendragon Pendragon
-1    _Knight   Knight
+1    Proper    Sir
+1    Proper    Lancelot
+1    Proper    Bedevere
+1    Proper    Uther
+1    Proper    Pendragon
+1    Proper    Knight
 
 # Verbs (third person singular present).
 # Note that only transitive verbs get our VerbT tag,
 # and some of those could also function as intransitives!
 1    VerbT    has
-1    VerbT    covers
 1    VerbT    is
-1    VerbT    drinks
-1    VerbT    carries
-1    VerbT    rides
-1    VerbT    riding
+
+# Extracted VerbB from previous VerbT
+1    VerbB    covers
+1    VerbB    drinks
+1    VerbB    carries
+1    VerbB    rides
+1    VerbB    riding
 
 # End-of-sentence.
 1    Misc    !
@@ -118,12 +120,12 @@
 1    Misc    so
 
 # Numbers.
-1    Misc    eight
-1    Misc    five
-1    Misc    one
-1    Misc    5.5
-1    Misc    sixty
-1    Misc    5,000
+1    Num    eight
+1    Num    five
+1    Num    one
+1    Num    5.5
+1    Num    sixty
+1    Num    5,000
 
 # Expletive.
 1    Misc    there
@@ -136,16 +138,16 @@
 1    Misc    if
 
 # Modals.
-1    Misc    can
-1    Misc    could
-1    Misc    may
-1    Misc    might
-1    Misc    must
-1    Misc    ought
-1    Misc    shall
-1    Misc    should
-1    Misc    will
-1    Misc    would
+1    VerbT    can
+1    VerbT    could
+1    VerbT    may
+1    VerbT    might
+1    VerbT    must
+1    VerbT    ought
+1    VerbT    shall
+1    VerbT    should
+1    VerbT    will
+1    VerbT    would
 
 
 # Adjectives.
@@ -203,12 +205,12 @@
 
 1    Proper  Camelot
 1    Proper  England
-1    Misc    _Holy _Grail
-1    _Holy   Holy
-1    _Grail  Grail
-1    Misc    _Round _Table
-1    _Round  Round
-1    _Table  Table
+1    Proper    _Holy _Grail
+1    Proper   Holy
+1    Proper  Grail
+1    Proper    _Round _Table
+1    Proper  Round
+1    Proper  Table
 
 # Plural proper nouns.
 1    Misc    Britons
@@ -294,17 +296,17 @@
 1    VerbB    knowing
 
 # Verbs (past participle).
-1    Misc    had
-1    Misc    spoken
-1    Misc    covered
-1    Misc    been
-1    Misc    ridden
-1    Misc    drunk
-1    Misc    grown
-1    Misc    carried
-1    Misc    suggested
-1    Misc    migrated
-1    Misc    known
+1    VerbB    had
+1    VerbB    spoken
+1    VerbB    covered
+1    VerbB    been
+1    VerbB    ridden
+1    VerbB    drunk
+1    VerbB    grown
+1    VerbB    carried
+1    VerbB    suggested
+1    VerbB    migrated
+1    VerbB    known
 
 # More third person singular verbs.
 1    Misc    speaks

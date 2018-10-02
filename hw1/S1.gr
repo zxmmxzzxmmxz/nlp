@@ -10,6 +10,8 @@
 1   S1   NP _VP
 1   S1   VA Punc
 1   S1   QP Punc
+1   S1   Phrase Punc
+1   S1   NumPhrase Punc
 1   _VP  VP Punc
 
 # Verb Adjective structure: this refers to Verb phrase -> adjective phrase structure
@@ -35,6 +37,8 @@
 
 1   SingleNoun   Does  Noun
 1   PluralNoun   Do    PNoun
+1   SingleNoun   Noun  Is
+1   PluralNoun   PNoun Are
 1   PQuestion    WhPr  Do
 1   SQuestion    WhPr  Does
 
@@ -57,10 +61,17 @@
 # VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
 20  VPhrase  VerbB   AAction
 20  VPhrase  VerbB   Action
+20  VPhrase  VerbT   DVerbB
+
+# VPhraseEP: VPhrase + elaboration phrases of any sort
+20  VPhraseEP VPhrase EP
 
 # Proper/Pron  VPhrase     <--- Arthur/she  VPhrase,  PVPhrase
 20  PVPhrase  Proper  VPhrase
 20  PVPhrase  Pron    VPhrase
+
+# Double VerbB nesting
+20  DVerbB VerbB VerbB
 
 1   VP   VerbT NP
 1   VP   VerbT EP
@@ -68,19 +79,46 @@
 20  NP   Det Nbar
 1   NP   Proper
 
-# Explanation Phrase: Determiner followed by Proper Noun,  probably need to rename
+# Explanation Phrase: Determiner/Prep followed by Proper Noun
 20  EP   Det Proper
 
+20  EP   Prep Proper
+
+
 20  EAction  Action EP
+
+# Elaboration Phrase: Prep Det, Det Prep
+20  ElP  Prep Det
+20  ElP  Det  Prep
+
+# Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP
+20  ElP2 SingleNoun ElP
+20  ElP2 PluralNoun ElP
+20  ElP2 ElP Noun
+
+# Phrase: complex structures together
+20 Phrase ElP2 Proper
+20 Phrase ElP2 CompProper
+20 Phrase Proper VPhrase
+20 Phrase Proper VPhraseEP
+20 Phrase Action ElP2
+20 Phrase VDescPhr AP
+
+# NumPhrase: Num Phrase
+20 NumPhrase Num Phrase
 
 # Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
 20  AP   VerbT Adje
 
 # Simple Descriptive Phrase:  Det Noun <--  that king, a king, etc
-20  DescPhr   Det   Noun
+20  DescPhr   Det Noun
+20  DescPhr   Det Proper
 
 # Simple Verb on Descriptive Phrase:    VerbB  DescPhr
 20  VDescPhr  VerbB DescPhr
+
+#  Composite Proper: Proper Proper
+20  CompProper Proper Proper
 
 10  Nbar Noun
 1   Nbar Nbar PP
