@@ -113,6 +113,7 @@
 # Coordinating conjunctions.
 1    Conj    and
 1    Conj    or
+1    Conj    if
 
 # Extracted VerbT from Conj
 1    VerbT    but
@@ -137,7 +138,6 @@
 1    Misc    so
 1    Misc    while
 1    Misc    because
-1    Misc    if
 
 # Modals.
 1    VerbT    can
