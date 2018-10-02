@@ -43,6 +43,8 @@
 1   PQuestion    WhPr  Do
 1   SQuestion    WhPr  Does
 
+1   PluralNoun   Num PNoun
+
 # End of Question Phrase section
 
 # Proper VerbB     <--- action phrase: "Arthur speak"
@@ -101,6 +103,7 @@
 20  ElP  Pron VerbT
 20  ElP  VerbT Pron
 20  ElP  Prep Pron
+20  ElP  Prep PluralNoun
 
 # Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP // etc
 20  ElP2 SingleNoun ElP
