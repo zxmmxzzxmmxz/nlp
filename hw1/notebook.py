@@ -14,9 +14,10 @@ def draw_tree(tree_string):
     tree = nltk.Tree.fromstring(tree_string)
     tree.draw()
 
-parse_gram = Pcfg(["S1.gr","S2.gr","Vocab.gr"])
+parse_gram = Pcfg(["S1.gr", "S2.gr", "Vocab.gr"])
+#parse_gram = Pcfg(["G1.gr"])
 
-parser = CkyParse(parse_gram, beamsize=0.00001)
+parser = CkyParse(parse_gram)
 
 ce, trees = parser.parse_file('devset.txt')
 print("-cross entropy: {}".format(ce))

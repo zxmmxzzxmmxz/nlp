@@ -1,12 +1,4 @@
-#testSentecne = "( (NP-TMP (NNP December) (CD 1998)))"
-#testSentecne = "(NP-TMP (NNP December))"
-'''sentence = (TOP (S1 (NP (Proper Arthur) )
-             (_VP (VP (VerbT is)
-                      (NP (Det the)
-                          (Nbar (Noun king) )))
-                  (Punc .))) )'''
-#sentence = '''NP (Nbar (Noun king) )
- #                 (Det the) '''
+from nltk import tree
 
 
 class Tree:
@@ -26,15 +18,30 @@ class Tree:
                     if number_of_open_brackets == 0:
                         right_bracket_index = i + 1
                         break
-            self._root = self.analyze_grammars(sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1])
-            self._trees.append(self.analyze_grammars(sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1]))
+            self._root = self.analyze_grammars(sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1], True)
+            self._trees.append(self.analyze_grammars(sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1], True))
             sentence = sentence[left_bracket_index + right_bracket_index + 1:]
 
+    def transformToCNF(self, sentence):
+        t = tree.Tree.fromstring(sentence, remove_empty_top_bracketing=True)
+
+        # convert the tree to CNF
+        t.chomsky_normal_form()
+        return str(t)
+
     # should return a tree's root node
-    def analyze_grammars(self, sentence):
+    def analyze_grammars(self, sentence, top):
+        #print(sentence)
+        sentence = self.transformToCNF(sentence)
+        #print("after CNF transform")
+        #print(sentence)
         if len(sentence.split()) == 2:
             # this is a terminal grammar segment
             terminal_parts = sentence.replace("(", " ").replace(")", " ").split()
+            if not terminal_parts:
+                return None
+            if terminal_parts[0] == terminal_parts[1]:
+                terminal_parts[0] *= 2
             new_node = GrammarNode(terminal_parts[0], terminal_parts[1])
             new_node.set_is_terminal(True)
             return new_node
@@ -59,10 +66,14 @@ class Tree:
                     if number_of_open_brackets == 0:
                         right_bracket_index = i + 1
                         break
-            right_side.append(self.analyze_grammars(temp_sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1]))
+            to_append = self.analyze_grammars(temp_sentence[left_bracket_index: left_bracket_index + right_bracket_index + 1],False)
+            if to_append is not None:
+                right_side.append(to_append)
             temp_sentence = temp_sentence[left_bracket_index + right_bracket_index + 1:]
 
         new_node = GrammarNode(left_side, right_side)
+        if top:
+            new_node = GrammarNode("S1", [new_node])
         return new_node
 
     def dump_to_grammars(self):
@@ -78,8 +89,10 @@ class Tree:
             a_grammar = Grammar(left, right)
             if grammars.get(a_grammar) is None:
                 grammars[a_grammar] = 1
+                #grammars[a_grammar] = 0
             else:
                 grammars[a_grammar] += 1
+                #grammars[a_grammar] = 0
             return
 
         left = node.get_left_hand_side()
@@ -87,8 +100,10 @@ class Tree:
         a_grammar = Grammar(left, right)
         if grammars.get(a_grammar) is None:
             grammars[a_grammar] = 1
+            grammars[a_grammar] = 0
         else:
             grammars[a_grammar] += 1
+            grammars[a_grammar] = 0
         for each in node.get_right_hand_side():
             self.dump_to_grammars_internal(each, grammars)
 
@@ -141,24 +156,26 @@ class Grammar:
         return other is not None and self._left == other._left and self._right == other._right
 
     def __str__(self):
-        return "Prob {0} ".format(self._prob) + self._left + "->" + self._right
+        return self._left + "  " + self._right
 
 
-
-sentence = '''(TOP (S1 (NP (Proper Arthur) )
-             (_VP (VP (VerbT is)
-                      (NP (Det the)
-                          (Nbar (Noun king) )))
-                  (Punc .))) )
-                  
-            (TOP (S1 (NP (Proper Arthur) )
-             (_VP (VP (VerbT is)
-                      (NP (Det the)
-                          (Nbar (Noun king) (Noun king1))))
-                  (Punc .))) )
-            '''
-print("sentence is {0}".format(sentence))
-stuff = Tree(sentence)
+with open("testdevset.trees", "r") as f:
+    sentences = ''.join(f.readlines())
+f.close()
+# sentences = '''(TOP (S1 (NP (Proper Arthur) )
+#              (_VP (VP (VerbT is)
+#                       (NP (Det the)
+#                           (Nbar (Noun king) )))
+#                   (Punc .))) )
+#
+#             (TOP (S1 (NP (Proper Arthur) )
+#              (_VP (VP (VerbT is)
+#                       (NP (Det the)
+#                           (Nbar (Noun king) (Noun king1))))
+#                   (Punc .))) )
+#             '''
+#print("sentences are {0}".format(sentences))
+stuff = Tree(sentences)
 grammars_with_count = stuff.dump_to_grammars()
 
 left_set = set()
@@ -170,8 +187,11 @@ for each_left in left_set:
     total_count = 0
     for each in filtered_keys:
         total_count += grammars_with_count.get(each)
-    for grammar_to_update in filtered_keys:
-        grammar_to_update._prob = grammars_with_count.get(grammar_to_update) / float(total_count)
+    # for grammar_to_update in filtered_keys:
+    #     grammar_to_update._prob = grammars_with_count.get(grammar_to_update) / float(total_count)
 
-for item in grammars_with_count.items():
-    print(item[0])
+with open("T.gr", "w") as wf:
+    for item in grammars_with_count.items():
+        if item[1] is not 0:
+            wf.write(str(item[1]) + " " + str(item[0]) + "\n")
+wf.close()
