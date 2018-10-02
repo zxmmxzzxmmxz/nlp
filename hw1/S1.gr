@@ -10,6 +10,8 @@
 1   S1   NP _VP
 1   S1   VA Punc
 1   S1   QP Punc
+1   S1   Phrase Punc
+1   S1   NumPhrase Punc
 1   _VP  VP Punc
 
 # Verb Adjective structure: this refers to Verb phrase -> adjective phrase structure
@@ -34,6 +36,8 @@
 
 1   SingleNoun   Does  Noun
 1   PluralNoun   Do    PNoun
+1   SingleNoun   Noun  Is
+1   PluralNoun   PNoun Are
 1   PQuestion    WhPr  Do
 1   SQuestion    WhPr  Does
 
@@ -71,6 +75,20 @@
 20  EP   Det Proper
 20  EAction  Action EP
 
+# Elaboration Phrase: Prep Det
+20  ElP  Prep Det
+
+# Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP
+20  ElP2 SingleNoun ElP
+20  ElP2 PluralNoun ElP
+
+# Phrase: complex structures together
+20 Phrase ElP2 Proper
+20 Phrase ElP2 CompProper
+
+# NumPhrase: Num Phrase
+20 NumPhrase Num Phrase
+
 # Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
 20  AP   VerbT Adje
 
@@ -79,6 +97,9 @@
 
 # Simple Verb on Descriptive Phrase:    VerbB  DescPhr
 20  VDescPhr  VerbB DescPhr
+
+#  Composite Proper: Proper Proper
+20  CompProper Proper Proper
 
 10  Nbar Noun
 1   Nbar Nbar PP
