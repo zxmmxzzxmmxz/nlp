@@ -114,6 +114,7 @@
 1    Conj    and
 1    Conj    or
 1    Conj    if
+1    Conj    when
 
 # Extracted VerbT from Conj
 1    VerbT    but
