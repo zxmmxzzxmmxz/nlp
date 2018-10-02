@@ -8,12 +8,169 @@
 
 1   S1   NP VP
 1   S1   NP _VP
+1   S1   VA Punc
+1   S1   QP Punc
+1   S1   Phrase Punc
+1   S1   NumPhrase Punc
+1   S1   ComplexPhrase Punc
+1   S1   CComplexPhrase Punc
 1   _VP  VP Punc
 
+# Verb Adjective structure: this refers to Verb phrase -> adjective phrase structure
+20  VA   VP AP
+
+# Question Phrase section 
+# -> Do PNoun VerbB Punc // Does Noun VerbB Punc
+
+# TODO:
+
+# -> What/Which/Why  Does/Do  [Action:(Proper  VerbB)]
+
+20  QP   SingleNoun  VerbB
+20  QP   PluralNoun  VerbB
+20  QP   PQuestion   Action
+20  QP   SQuestion   Action
+20  QP   PQuestion   PVPhrase
+20  QP   SQuestion   PVPhrase
+20  QP   PQuestion   VPhrase
+20  QP   SQuestion   VPhrase
+20  QP   Is          DAction
+20  QP   Are         DAction
+
+1   SingleNoun   Does  Noun
+1   PluralNoun   Do    PNoun
+1   SingleNoun   Noun  Is
+1   PluralNoun   PNoun Are
+1   PQuestion    WhPr  Do
+1   SQuestion    WhPr  Does
+
+1   PluralNoun   Num PNoun
+
+# End of Question Phrase section
+
+# Proper VerbB     <--- action phrase: "Arthur speak"
+20  Action  Proper VerbB
+20  Action  Proper VDescPhr
+
+# Pronoun VerbB    <--- "she speak" Ambiguous Action: AAction
+20  AAction  Pron VerbB
+20  AAction  Pron VDescPhr
+
+# Two actions linked together
+20  DAction  AAction Action
+20  DAction  Action  AAction
+20  DAction  Action  EAction
+20  DAction  AAction EAction
+
+# VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
+20  VPhrase  VerbB AAction
+20  VPhrase  VerbB Action
+20  VPhrase  VerbT DVerbB
+20  VPhrase  VerbT VerbB
+20  VPhrase  VerbB Proper
+20  VPhrase  DVerbB EP
+
+# VPhraseEP: VPhrase + elaboration phrases of any sort
+20  VPhraseEP VPhrase EP
+
+# Proper/Pron  VPhrase     <--- Arthur/she  VPhrase,  PVPhrase
+20  PVPhrase  Proper VPhrase
+20  PVPhrase  Pron VPhrase
+
+# Double VerbB nesting
+20  DVerbB VerbB VerbB
+
+# Neg labels: Neg (something)
+1   NL   Neg VerbB
+
 1   VP   VerbT NP
+1   VP   VerbT EP
 
 20  NP   Det Nbar
 1   NP   Proper
+
+# Explanation Phrase: Determiner/Prep followed by Proper Noun
+20  EP   Det Proper
+
+20  EP   Prep Proper
+20  EP   WhPr VPhrase
+20  EP   ElP AP
+
+
+20  EAction  Action EP
+
+# Elaboration Phrase: Prep Det, Det Prep, etc
+20  ElP  Prep DescPhr
+20  ElP  Prep Det
+20  ElP  Det  Prep
+20  ElP  Pron VerbT
+20  ElP  VerbT Pron
+20  ElP  Prep Pron
+20  ElP  Prep PluralNoun
+
+# Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP // etc
+20  ElP2 SingleNoun ElP
+20  ElP2 PluralNoun ElP
+20  ElP2 ElP Noun
+20  ElP2 Proper EP
+20  ElP2 CompProper EP
+
+# Additional Phrase of any sort: Conj (something)
+20 APhrase Conj Action
+20 APhrase Conj Phrase
+
+# Compound Phrase: (something) APhrase
+20 CPhrase Action APhrase
+20 CPhrase CompProper APhrase
+20 CPhrase Adverb APhrase
+
+# Phrase: complex structures together
+20 Phrase ElP ElP2
+20 Phrase ElP2 Proper
+20 Phrase ElP2 CompProper
+20 Phrase Proper VPhrase
+20 Phrase Proper VPhraseEP
+20 Phrase Action ElP2
+20 Phrase VDescPhr AP
+20 Phrase VerbT CPhrase
+20 Phrase PVPhrase ElP
+20 Phrase DescPhr VPhrase
+20 Phrase VerbB ElP
+20 Phrase VerbB ElP2
+20 Phrase WhPr PVPhrase
+20 Phrase Do NL
+20 Phrase Does NL
+20 Phrase Action
+20 Phrase AAction
+20 Phrase PVPhrase
+20 Phrase AAction
+20 Phrase CPhrase
+
+# ComplexPhrase: Multiple Phrases stringed together
+20 ComplexPhrase Phrase Phrase
+20 ComplexPhrase Phrase APhrase
+20 ComplexPhrase Phrase CPhrase
+
+# CComplexPhrase: (something) ComplexPhrase
+20 CComplexPhrase Phrase ComplexPhrase
+
+# NumPhrase: Num Phrase
+20 NumPhrase Num Phrase
+
+# [] Adje or Adje []
+20  AP   VerbT Adje
+20  AP   Adje Noun
+
+# Simple Descriptive Phrase:  Det Noun <--  that king, a king, etc
+20  DescPhr   Det Noun
+20  DescPhr   Det Proper
+20  DescPhr   Det CompProper
+
+# Simple Verb on Descriptive Phrase:    VerbB  DescPhr
+20  VDescPhr  VerbB DescPhr
+
+#  Composite Proper: Proper Proper
+20  CompProper Proper Proper
 
 10  Nbar Noun
 1   Nbar Nbar PP
