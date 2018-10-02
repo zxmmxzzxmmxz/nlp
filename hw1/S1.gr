@@ -19,15 +19,48 @@
 # -> Do PNoun VerbB Punc // Does Noun VerbB Punc
 
 # TODO:
-# -> What/Which/Why  Does/Do  Proper  VerbB
+
+# -> What/Which/Why  Does/Do  [Action:(Proper  VerbB)]
 
 20  QP   SingleNoun  VerbB
 20  QP   PluralNoun  VerbB
+20  QP   PQuestion   Action
+20  QP   SQuestion   Action
+20  QP   PQuestion   PVPhrase
+20  QP   SQuestion   PVPhrase
+20  QP   PQuestion   VPhrase
+20  QP   SQuestion   VPhrase
+20  QP   Is          DAction
+20  QP   Are         DAction
 
-1   SingleNoun   Does Noun
-1   PluralNoun   Do  PNoun
+1   SingleNoun   Does  Noun
+1   PluralNoun   Do    PNoun
+1   PQuestion    WhPr  Do
+1   SQuestion    WhPr  Does
 
 # End of Question Phrase section
+
+# Proper VerbB     <--- action phrase: "Arthur speak"
+20  Action  Proper  VerbB
+20  Action  Proper  VDescPhr
+
+# Pronoun VerbB    <--- "she speak" Ambiguous Action: AAction
+20  AAction  Pron  VerbB
+20  AAction  Pron  VDescPhr
+
+# Two actions linked together
+20  DAction  AAction Action
+20  DAction  Action  AAction
+20  DAction  Action  EAction
+20  DAction  AAction EAction
+
+# VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
+20  VPhrase  VerbB   AAction
+20  VPhrase  VerbB   Action
+
+# Proper/Pron  VPhrase     <--- Arthur/she  VPhrase,  PVPhrase
+20  PVPhrase  Proper  VPhrase
+20  PVPhrase  Pron    VPhrase
 
 1   VP   VerbT NP
 1   VP   VerbT EP
@@ -38,8 +71,16 @@
 # Explanation Phrase: Determiner followed by Proper Noun,  probably need to rename
 20  EP   Det Proper
 
+20  EAction  Action EP
+
 # Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
 20  AP   VerbT Adje
+
+# Simple Descriptive Phrase:  Det Noun <--  that king, a king, etc
+20  DescPhr   Det   Noun
+
+# Simple Verb on Descriptive Phrase:    VerbB  DescPhr
+20  VDescPhr  VerbB DescPhr
 
 10  Nbar Noun
 1   Nbar Nbar PP
