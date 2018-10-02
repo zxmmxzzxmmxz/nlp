@@ -113,6 +113,7 @@
 # Coordinating conjunctions.
 1    Conj    and
 1    Conj    or
+1    Conj    nor
 1    Conj    if
 1    Conj    when
 
@@ -208,10 +209,10 @@
 
 1    Proper  Camelot
 1    Proper  England
-1    Proper    _Holy _Grail
-1    Proper   Holy
+1    Proper  _Holy _Grail
+1    Proper  Holy
 1    Proper  Grail
-1    Proper    _Round _Table
+1    Proper  _Round _Table
 1    Proper  Round
 1    Proper  Table
 
@@ -232,10 +233,10 @@
 
 
 # Possessive personal pronouns
-1    Misc    her
-1    Misc    his
-1    Misc    its
-1    Misc    their
+1    Pron    her
+1    Pron    his
+1    Pron    its
+1    Pron    their
 
 # Adverbs.
 1    Misc    again
@@ -273,18 +274,18 @@
 1    VerbB    know
 
 # Verbs (past tense).
-1    Misc    had
-1    Misc    spoke
-1    Misc    covered
-1    Misc    was
-1    Misc    were
-1    Misc    rode
-1    Misc    drank
-1    Misc    grew
-1    Misc    carried
-1    Misc    suggested
-1    Misc    migrated
-1    Misc    knew
+1    VerbB    had
+1    VerbB    spoke
+1    VerbB    covered
+1    VerbB    was
+1    VerbB    were
+1    VerbB    rode
+1    VerbB    drank
+1    VerbB    grew
+1    VerbB    carried
+1    VerbB    suggested
+1    VerbB    migrated
+1    VerbB    knew
 
 # Verbs (present participles).
 
