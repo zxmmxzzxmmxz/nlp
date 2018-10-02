@@ -79,23 +79,25 @@
 1    Proper    Dingo
 1    Proper    Patsy
 1    Proper    _Uther _Pendragon
-1    _Sir      Sir
-1    _Lancelot Lancelot
-1    _Bedevere Bedevere
-1    _Uther    Uther
-1    _Pendragon Pendragon
-1    _Knight   Knight
+1    Proper    Sir
+1    Proper    Lancelot
+1    Proper    Bedevere
+1    Proper    Uther
+1    Proper    Pendragon
+1    Proper    Knight
 
 # Verbs (third person singular present).
 # Note that only transitive verbs get our VerbT tag,
 # and some of those could also function as intransitives!
 1    VerbT    has
-1    VerbT    covers
 1    VerbT    is
-1    VerbT    drinks
-1    VerbT    carries
-1    VerbT    rides
-1    VerbT    riding
+
+# Extracted VerbB from previous VerbT
+1    VerbB    covers
+1    VerbB    drinks
+1    VerbB    carries
+1    VerbB    rides
+1    VerbB    riding
 
 # End-of-sentence.
 1    Misc    !
