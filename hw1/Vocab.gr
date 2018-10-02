@@ -233,10 +233,10 @@
 
 
 # Possessive personal pronouns
-1    Misc    her
-1    Misc    his
-1    Misc    its
-1    Misc    their
+1    Pron    her
+1    Pron    his
+1    Pron    its
+1    Pron    their
 
 # Adverbs.
 1    Misc    again
