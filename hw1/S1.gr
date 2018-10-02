@@ -60,10 +60,14 @@
 # VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
 20  VPhrase  VerbB   AAction
 20  VPhrase  VerbB   Action
+20  VPhrase  VerbT   DVerbB
 
 # Proper/Pron  VPhrase     <--- Arthur/she  VPhrase,  PVPhrase
 20  PVPhrase  Proper  VPhrase
 20  PVPhrase  Pron    VPhrase
+
+# Double VerbB nesting
+20  DVerbB VerbB VerbB
 
 1   VP   VerbT NP
 1   VP   VerbT EP
@@ -85,6 +89,7 @@
 # Phrase: complex structures together
 20 Phrase ElP2 Proper
 20 Phrase ElP2 CompProper
+20 Phrase Proper VPhrase
 
 # NumPhrase: Num Phrase
 20 NumPhrase Num Phrase
