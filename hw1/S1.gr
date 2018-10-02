@@ -98,6 +98,12 @@
 20  ElP2 Proper EP
 20  ElP2 CompProper EP
 
+# Additional Phrase of any sort: Conj (something)
+20 APhrase Conj Action
+
+# Compound Phrase: (something) APhrase
+20 CPhrase Action APhrase
+
 # Phrase: complex structures together
 20 Phrase ElP ElP2
 20 Phrase ElP2 Proper
@@ -106,6 +112,7 @@
 20 Phrase Proper VPhraseEP
 20 Phrase Action ElP2
 20 Phrase VDescPhr AP
+20 Phrase VerbT CPhrase
 
 # NumPhrase: Num Phrase
 20 NumPhrase Num Phrase
