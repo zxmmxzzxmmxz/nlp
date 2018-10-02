@@ -44,8 +44,8 @@
 # End of Question Phrase section
 
 # Proper VerbB     <--- action phrase: "Arthur speak"
-20  Action  Proper  VerbB
-20  Action  Proper  VDescPhr
+20  Action  Proper VerbB
+20  Action  Proper VDescPhr
 
 # Pronoun VerbB    <--- "she speak" Ambiguous Action: AAction
 20  AAction  Pron  VerbB
@@ -58,16 +58,17 @@
 20  DAction  AAction EAction
 
 # VerbB Pronoun/Proper VerbB     <--- phrases, eg:"suggest she carry",  Verb Phrase
-20  VPhrase  VerbB   AAction
-20  VPhrase  VerbB   Action
-20  VPhrase  VerbT   DVerbB
+20  VPhrase  VerbB AAction
+20  VPhrase  VerbB Action
+20  VPhrase  VerbT DVerbB
+20  VPhrase  VerbB Proper
 
 # VPhraseEP: VPhrase + elaboration phrases of any sort
 20  VPhraseEP VPhrase EP
 
 # Proper/Pron  VPhrase     <--- Arthur/she  VPhrase,  PVPhrase
-20  PVPhrase  Proper  VPhrase
-20  PVPhrase  Pron    VPhrase
+20  PVPhrase  Proper VPhrase
+20  PVPhrase  Pron VPhrase
 
 # Double VerbB nesting
 20  DVerbB VerbB VerbB
@@ -81,19 +82,24 @@
 # Explanation Phrase: Determiner/Prep followed by Proper Noun
 20  EP   Det Proper
 20  EP   Prep Proper
+20  EP   WhPr VPhrase
 
 20  EAction  Action EP
 
-# Elaboration Phrase: Prep Det, Det Prep
+# Elaboration Phrase: Prep Det, Det Prep, etc
 20  ElP  Prep Det
 20  ElP  Det  Prep
+20  ElP  Pron VerbT
 
 # Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP
 20  ElP2 SingleNoun ElP
 20  ElP2 PluralNoun ElP
 20  ElP2 ElP Noun
+20  ElP2 Proper EP
+20  ElP2 CompProper EP
 
 # Phrase: complex structures together
+20 Phrase ElP ElP2
 20 Phrase ElP2 Proper
 20 Phrase ElP2 CompProper
 20 Phrase Proper VPhrase

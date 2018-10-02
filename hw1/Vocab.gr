@@ -308,12 +308,12 @@
 1    VerbB    known
 
 # More third person singular verbs.
-1    Misc    speaks
-1    Misc    grows
-1    Misc    goes
-1    Misc    migrates
-1    Misc    suggests
-1    Misc    knows
+1    VerbB    speaks
+1    VerbB    grows
+1    VerbB    goes
+1    VerbB    migrates
+1    VerbB    suggests
+1    VerbB    knows
 
 # Verbs (present, plural, third person).
 1    Misc    have
