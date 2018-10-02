@@ -61,6 +61,7 @@
 20  VPhrase  VerbB AAction
 20  VPhrase  VerbB Action
 20  VPhrase  VerbT DVerbB
+20  VPhrase  VerbT VerbB
 20  VPhrase  VerbB Proper
 
 # VPhraseEP: VPhrase + elaboration phrases of any sort
@@ -90,6 +91,7 @@
 20  ElP  Prep Det
 20  ElP  Det  Prep
 20  ElP  Pron VerbT
+20  ElP  Prep Pron
 
 # Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP
 20  ElP2 SingleNoun ElP
@@ -100,9 +102,11 @@
 
 # Additional Phrase of any sort: Conj (something)
 20 APhrase Conj Action
+20 APhrase Conj Phrase
 
 # Compound Phrase: (something) APhrase
 20 CPhrase Action APhrase
+20 CPhrase CompProper APhrase
 
 # Phrase: complex structures together
 20 Phrase ElP ElP2
@@ -113,11 +117,12 @@
 20 Phrase Action ElP2
 20 Phrase VDescPhr AP
 20 Phrase VerbT CPhrase
+20 Phrase PVPhrase ElP
 
 # NumPhrase: Num Phrase
 20 NumPhrase Num Phrase
 
-# Right now, this is mainly for "is [adje]" structure. Might need to rework VerbT away
+# Right now, this is mainly for "is [adje]" structure.
 20  AP   VerbT Adje
 
 # Simple Descriptive Phrase:  Det Noun <--  that king, a king, etc

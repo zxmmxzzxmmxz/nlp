@@ -113,6 +113,7 @@
 # Coordinating conjunctions.
 1    Conj    and
 1    Conj    or
+1    Conj    nor
 1    Conj    if
 1    Conj    when
 
