@@ -136,10 +136,10 @@
 1    Misc    there
 
 # Subordinating conjunctions.
-1    Misc    that
-1    Misc    so
-1    Misc    while
-1    Misc    because
+1    Conj    that
+1    Conj    so
+1    Conj    while
+1    Conj    because
 
 # Modals.
 1    VerbT    can
@@ -239,14 +239,14 @@
 1    Pron    their
 
 # Adverbs.
-1    Misc    again
-1    Misc    already
-1    Misc    currently
-1    Misc    frequently
-1    Misc    precisely
-1    Misc    south
-1    Misc    successfully
-1    Misc    unfortunately
+1    Adverb    again
+1    Adverb    already
+1    Adverb    currently
+1    Adverb    frequently
+1    Adverb    precisely
+1    Adverb    south
+1    Adverb    successfully
+1    Adverb    unfortunately
 
 # 'do'/'does'
 1    Do      do
@@ -335,7 +335,6 @@
 1    Misc    know
 
 # Wh-determiners.
-1    Misc    that
 1    WhPr    what
 1    WhPr    which
 

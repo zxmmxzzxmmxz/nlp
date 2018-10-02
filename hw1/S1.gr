@@ -13,6 +13,7 @@
 1   S1   Phrase Punc
 1   S1   NumPhrase Punc
 1   S1   ComplexPhrase Punc
+1   S1   CComplexPhrase Punc
 1   _VP  VP Punc
 
 # Verb Adjective structure: this refers to Verb phrase -> adjective phrase structure
@@ -112,6 +113,7 @@
 # Compound Phrase: (something) APhrase
 20 CPhrase Action APhrase
 20 CPhrase CompProper APhrase
+20 CPhrase Adverb APhrase
 
 # Phrase: complex structures together
 20 Phrase ElP ElP2
@@ -126,11 +128,20 @@
 20 Phrase DescPhr VPhrase
 20 Phrase VerbB ElP
 20 Phrase VerbB ElP2
+20 Phrase WhPr PVPhrase
 20 Phrase Action
+20 Phrase AAction
+20 Phrase PVPhrase
+20 Phrase AAction
+20 Phrase CPhrase
 
 # ComplexPhrase: Multiple Phrases stringed together
 20 ComplexPhrase Phrase Phrase
 20 ComplexPhrase Phrase APhrase
+20 ComplexPhrase Phrase CPhrase
+
+# CComplexPhrase: (something) ComplexPhrase
+20 CComplexPhrase Phrase ComplexPhrase
 
 # NumPhrase: Num Phrase
 20 NumPhrase Num Phrase
