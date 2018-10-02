@@ -77,6 +77,9 @@
 # Double VerbB nesting
 20  DVerbB VerbB VerbB
 
+# Neg labels: Neg (something)
+1   NL   Neg VerbB
+
 1   VP   VerbT NP
 1   VP   VerbT EP
 
@@ -129,6 +132,8 @@
 20 Phrase VerbB ElP
 20 Phrase VerbB ElP2
 20 Phrase WhPr PVPhrase
+20 Phrase Do NL
+20 Phrase Does NL
 20 Phrase Action
 20 Phrase AAction
 20 Phrase PVPhrase

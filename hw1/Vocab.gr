@@ -258,7 +258,7 @@
 1    Det    to
 
 # 'not'
-1    Misc    not
+1    Neg    not
 
 # Verbs (base form).
 1    VerbB    have
