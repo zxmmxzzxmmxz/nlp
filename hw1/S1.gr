@@ -49,8 +49,8 @@
 20  Action  Proper VDescPhr
 
 # Pronoun VerbB    <--- "she speak" Ambiguous Action: AAction
-20  AAction  Pron  VerbB
-20  AAction  Pron  VDescPhr
+20  AAction  Pron VerbB
+20  AAction  Pron VDescPhr
 
 # Two actions linked together
 20  DAction  AAction Action
@@ -95,6 +95,7 @@
 20  ElP  Prep Det
 20  ElP  Det  Prep
 20  ElP  Pron VerbT
+20  ElP  VerbT Pron
 20  ElP  Prep Pron
 
 # Elaboration Phrase 2: SingleNoun ElP  // PluralNoun ElP // etc
@@ -124,9 +125,12 @@
 20 Phrase PVPhrase ElP
 20 Phrase DescPhr VPhrase
 20 Phrase VerbB ElP
+20 Phrase VerbB ElP2
+20 Phrase Action
 
 # ComplexPhrase: Multiple Phrases stringed together
 20 ComplexPhrase Phrase Phrase
+20 ComplexPhrase Phrase APhrase
 
 # NumPhrase: Num Phrase
 20 NumPhrase Num Phrase
