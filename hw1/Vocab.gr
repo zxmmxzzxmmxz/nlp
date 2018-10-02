@@ -111,13 +111,17 @@
 1    Misc    :
 
 # Coordinating conjunctions.
-1    Misc    and
-1    Misc    but
-1    Misc    or
-1    Misc    either
-1    Misc    nor
-1    Misc    neither
-1    Misc    so
+1    Conj    and
+1    Conj    or
+1    Conj    if
+1    Conj    when
+
+# Extracted VerbT from Conj
+1    VerbT    but
+1    VerbT    either
+1    VerbT    nor
+1    VerbT    neither
+1    VerbT    so
 
 # Numbers.
 1    Num    eight
@@ -135,7 +139,6 @@
 1    Misc    so
 1    Misc    while
 1    Misc    because
-1    Misc    if
 
 # Modals.
 1    VerbT    can
@@ -247,6 +250,8 @@
 # 'do'/'does'
 1    Do      do
 1    Does    does
+1    VerbB   do
+1    VerbB   does
 
 # 'to'
 1    Det    to
@@ -309,12 +314,12 @@
 1    VerbB    known
 
 # More third person singular verbs.
-1    Misc    speaks
-1    Misc    grows
-1    Misc    goes
-1    Misc    migrates
-1    Misc    suggests
-1    Misc    knows
+1    VerbB    speaks
+1    VerbB    grows
+1    VerbB    goes
+1    VerbB    migrates
+1    VerbB    suggests
+1    VerbB    knows
 
 # Verbs (present, plural, third person).
 1    Misc    have
