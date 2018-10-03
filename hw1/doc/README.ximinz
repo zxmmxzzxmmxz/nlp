@@ -1,0 +1,8 @@
+Name: Ximin Zhang
+SFU email: ximinz@sfu.ca
+SFU ID: 301252875
+
+Work done:
+
+Wrote the script to read treebank, analyze sentences(transforming to CNF mostly), extract grammars and write them to files
+Testing, ensure that entropy scores are lowered
