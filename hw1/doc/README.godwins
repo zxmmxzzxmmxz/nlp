@@ -1,0 +1,9 @@
+Name: Godwin Stephens
+SFU email: godwins@sfu.ca
+SFU ID: 301269611
+
+Work done:
+
+Made all of the custom grammar in S1.gr by hand.
+Edited certain fields in Vocab.gr (that were in example_sentences.txt) to be different labels.
+Documented the "Development of S1.gr" section in the Python Notebook
