@@ -1,3 +1,5 @@
-Student number: 301252875
+Name: Ximin Zhang
+SFU email: ximinz@sfu.ca
+Student ID: 301252875
 Implemented the chunker.py based off the prototype by godwins
 Put code of perc_train() function along with main() to chunker.py
