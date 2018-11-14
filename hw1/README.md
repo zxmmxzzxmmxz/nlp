@@ -7,7 +7,7 @@ Get started:
     cd nlp-class-hw/cgw
 
 This task involves writing or creating weighted context-free grammars
-in order to parse English sentences and utterances. The vocabulary
+to parse English sentences and utterances. The vocabulary set
 is fixed. 
 
 ## Install requirements 
@@ -19,11 +19,11 @@ is fixed.
 ## Quick Start
 
 You can use the python notebook to see how to use the CFG parser /
-generator or use the command line as explained below.
+generator, or use the command line as explained below.
 
 ### Parser
 
-On the command line, to parse one sentence:
+To parse one sentence on the command line:
 
     echo "Arthur is the king ." | python3 pcfg_parse_gen.py -g S1.gr S2.gr Vocab.gr -i
 
@@ -62,12 +62,12 @@ A context-free grammar (CFG) is defined using the following building blocks:
 * Weights or frequencies or probabilities can be associated with each rule in a CFG.
 * A probabilistic CFG is defined as a group of conditional probabilities $$P(\alpha \mid A)$$: one for each non-terminal $$A$$
 
-A context-free grammar that is in extended Chomsky Normal Form
-(eCNF) iff the right hand side of each CFG rule is either one
+A context-free grammar is in extended Chomsky Normal Form
+(eCNF) if and only if the right hand side of each CFG rule is either one
 non-terminal, or two non-terminals, or one terminal symbol.
 
 This is a grammar in a formal sense. Just like we can write a
-grammar for the syntax of Python, for instance. In this exercise
+grammar for the syntax of Python. In this exercise
 we will try to write a grammar for a fragment of English.
 
 A derivation of this CFG starts with a string (called a sentential
@@ -111,18 +111,16 @@ The grammars in `S1.gr` and `S2.gr` are connected via the following rules in `S1
 
 ## Other files
 
-* `allowed_words.txt`: This file contains all the words that are allowed. You should make sure that your grammar generates sentences using exactly the words in this file. It does not specify the part of speech for each word, so you can choose to model the ambiguity of words in terms of part of speech in the `Vocab.gr` file.
-* `example-sentences.txt`: This file contains example sentences that you can use as a starting point for your grammar development. Only the first two sentences of this file can be parsed using the default `S1.gr` grammar. The rest are parsed with the backoff `S2.gr` grammar. 
+* `allowed_words.txt`: This file contains all allowed words. You should make sure that the grammar generates sentences using exactly the words in the file. It does not specify the part of speech for each word, so you can choose to model the ambiguity of words in terms of part of speech in the `Vocab.gr` file.
+* `example-sentences.txt`: This file contains example sentences as starting point for your grammar development. Only the first two sentences of this file can be parsed using the default `S1.gr` grammar. The rest are parsed with the backoff `S2.gr` grammar. 
 * `unseen.tags`: Used to deal with unknown words. You should not have to use this file during parsing, but the parser provided to you can optionally use this file in order to deal with unknown words in the input. 
 
 ## The Parser and Generator
 
-You are given a parser that takes sentences as input and produces
-parse trees and also a generator which generates a random sample
-of sentences from the weighted grammar. Parsing and generating will
-be useful steps in your grammar development strategy. You can learn
-the various options for running the parser and generator using the
-following command.
+A parser taking sentences as input and produces parse trees is given.
+A generator generating a random sample of sentences from the weighted grammar is also given.
+Parsing and generating helps for grammar development strategy. You can learn various options runnning parser and generator 
+using following command:
 
 The parser has several options to speed up parsing, such as beam
 size and pruning. 
